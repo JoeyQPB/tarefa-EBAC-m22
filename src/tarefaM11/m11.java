@@ -10,9 +10,9 @@ public class m11 {
 	private static final Scanner SC = new Scanner(System.in);
 
 	public static void main(String[] args) {
-//		System.out.println("## PARTE 01 ##");
-//		System.out.println();
-//		parte01();
+		System.out.println("## PARTE 01 ##");
+		System.out.println();
+		parte01();
 		
 		System.out.println();System.out.println();
 		
