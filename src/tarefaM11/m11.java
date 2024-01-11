@@ -34,7 +34,7 @@ public class m11 {
 			pessoas.add(new Pessoa(nome));
 		}
 		
-		pessoas.stream().forEach((el) -> System.out.println(el.toString()));
+		pessoas.stream().sorted().forEach((el) -> System.out.println(el.toString()));
 	}
 	
 	public static void parte02() {

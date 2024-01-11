@@ -1,6 +1,6 @@
 package tarefaM11;
 
-public class Pessoa {
+public class Pessoa implements Comparable<Pessoa> {
 	
 	private String name;
 	private String gender;
@@ -37,4 +37,11 @@ public class Pessoa {
 		if(this.getGender() != null) return "nome: " + this.getName() + " - Gênero: " + this.getGender();
 		return "nome: " + this.getName();
 	}
+
+	@Override
+	public int compareTo(Pessoa p) {
+		return this.name.toLowerCase().compareTo(p.getName().toLowerCase());
+	}
+	
+	
 }
