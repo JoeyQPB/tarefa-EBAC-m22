@@ -1,4 +1,4 @@
-package tarefaM11;
+package tarefaM12;
 
 public class Pessoa implements Comparable<Pessoa> {
 	

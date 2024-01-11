@@ -1,43 +1,22 @@
-package tarefaM11;
+package tarefaM12;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
-public class m11 {
+public class m12 {
 	
 	private static final Scanner SC = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		System.out.println("## PARTE 01 ##");
-		System.out.println();
-		parte01();
-		
-		System.out.println();System.out.println();
-		
-		System.out.println("## PARTE 02 ##");
-		System.out.println();
-		parte02();
-
+		start();
 		SC.close();
 	}
 	
-	public static void parte01() {
-		System.out.println("Entre com nomes de pessoas separados por víruglas: ");
-		String nomesEntrada = SC.nextLine();
-		
-		String[] nomes = nomesEntrada.split(",");
-		List<Pessoa> pessoas = new ArrayList<>();
-		
-		for (String nome : nomes) {
-			pessoas.add(new Pessoa(nome));
-		}
-		
-		pessoas.stream().sorted().forEach((el) -> System.out.println(el.toString()));
-	}
-	
-	public static void parte02() {
+	public static void start() {
 		System.out.println("Entre com nomes e gênero de pessoas separadando nome-genero e as pessoas por víruglas (ex: Jhon-M,Ana-F): ");
 		String nomesEntrada = SC.nextLine();
 		
