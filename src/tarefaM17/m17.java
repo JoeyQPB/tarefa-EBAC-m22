@@ -10,11 +10,15 @@ import entities.Golf;
 public class m17 {
 	
 	public static void main(String[] args) {
-		Map<Long, Car> carList = new HashMap<>();
+		Map<Long,? extends Car> carList = new HashMap<>();
 		Civic carCivic = new Civic("Civic turbinado", 2023, "Honda");
 		Golf carGolf = new Golf("Golf sapão", 2012, "Volkswagen");
 		
-		carList.put(1L, carCivic);
-		carList.put(2L, carGolf);
+		Map<Long, Car> conretList = new HashMap<>();
+		
+		conretList.put(1L, carCivic);
+		conretList.put(2L, carGolf);
+		
+		carList = conretList;
 	}
 }
