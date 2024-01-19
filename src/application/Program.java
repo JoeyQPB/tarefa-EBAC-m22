@@ -1,11 +1,11 @@
 package application;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import entities.Pessoa;
@@ -22,19 +22,20 @@ public class Program {
 		System.out.println();
 		gettingDataFromUser();
 
-		System.out.println();
-		System.out.println("## Grupping By Gender ##");
+//		System.out.println();
+//		System.out.println("## Grupping By Gender ##");
 		groupingByGenre();
-		System.out.println("..." );
-		System.out.println();
-
-		
-		System.out.println("## Gender F ##");
-		pessoasF.forEach(System.out::println);
-		System.out.println();
-		
-		System.out.println("## Gender M ##");
-		pessoasM.forEach(System.out::println);
+//		System.out.println("..." );
+//		System.out.println();
+//
+//		
+//		System.out.println("## Gender F ##");
+//		pessoasF.forEach(System.out::println);
+//		System.out.println();
+//		System.out.println();
+//		
+//		System.out.println("## Gender M ##");
+//		pessoasM.forEach(System.out::println);
 		
 		SC.close();
 	}
@@ -57,7 +58,18 @@ public class Program {
 	}
 	
 	private static void groupingByGenre() {
-		pessoasF = pessoas.stream().filter((Pessoa p) -> p.getGender().equalsIgnoreCase("F")).collect(Collectors.toList());
-		pessoasM = pessoas.stream().filter((Pessoa p) -> p.getGender().equalsIgnoreCase("M")).collect(Collectors.toList());
+		Map<String, List<Pessoa>> map = pessoas.stream().collect(Collectors.groupingBy(Pessoa::getGender));
+		
+		for (Entry<String, List<Pessoa>> el : map.entrySet()) {
+			List<String> nomes = new ArrayList<>();
+			el.getValue().forEach((pessoa) -> nomes.add(pessoa.getName()));
+			System.out.println(el.getKey() + ": " + nomes.toString());
+		}
+		
+		for (String key : map.keySet()) {
+			System.out.println(key + ": " + map.get(key));
+		}
+//		pessoasF = pessoas.stream().filter((Pessoa p) -> p.getGender().equalsIgnoreCase("F")).collect(Collectors.toList());
+//		pessoasM = pessoas.stream().filter((Pessoa p) -> p.getGender().equalsIgnoreCase("M")).collect(Collectors.toList());
 	}
 }

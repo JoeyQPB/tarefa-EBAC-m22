@@ -13,7 +13,7 @@ public class Pessoa implements Comparable<Pessoa> {
 
 	public Pessoa(String name, String gender) {
 		this.name = name;
-		this.gender = gender;
+		this.gender = gender.toUpperCase();
 	}
 
 	public String getName() {
